@@ -29,10 +29,13 @@ products.addEventListener('click', function (e) {
     }
     renderCart();
 
+    // If clear cart button is clicked clears the entire cart
   } else if(e.target.classList.contains('clear-cart')) {
     document.getElementsByClassName('cart-list')[0].innerHTML = '';
     document.getElementsByClassName('total')[0].innerHTML = 0;
     cart = [];
+
+    // Delete item button is clicked in cart list removes that item from cart
   } else if(e.target.classList.contains('delete')) {
     cart = cart.filter(item => item.name !== e.target.parentElement.getAttribute('data-name'));
     renderCart();
